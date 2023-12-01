@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const countRoutes = require('./routes/countRoutes');
 const newRoutes = require('./routes/newRoutes');
@@ -8,6 +9,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 // routes config
 app.use(['/new', '/api/new'], newRoutes);
