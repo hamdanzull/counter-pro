@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter API</title>
+</head>
+<style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 13px;
+        color: #ffffff;
+        background-color: #121212;
+    }
+
+    th,
+    td {
+        padding: 1px 10px;
+    }
+</style>
+
+<body>
+    <h2>HOW TO USE</h2>
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>Params</th>
+            <th>Query</th>
+        </tr>
+        <tr>
+            <td>Add new ID</td>
+            <td>/new/id/name_id</td>
+            <td>/new?id=name_id</td>
+        </tr>
+        <tr>
+            <td>Get counter</td>
+            <td>/count/id/name_id</td>
+            <td>/count/?id=name_id</td>
+        </tr>
+        <tr>
+            <td>Set counter</td>
+            <td>/set/name_id/num_count</td>
+            <td>/set?id=name_id&count=num_count</td>
+        </tr>
+    </table><br>
+
+    <h2>RESULT</h2>
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>Response</th>
+        </tr>
+        <tr>
+            <td>Add new ID</td>
+            <td>{"status":"success","message":"ID of name_id was added successfully","count":1}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{"status":"error","message":"ID of name_id already exists","count":1}</td>
+        </tr>
+        <tr>
+            <td>Get counter</td>
+            <td>{"status":"success","message":"Get count successfully","count":2}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{"status":"error","message":"ID of name_id not found"}</td>
+        </tr>
+        <tr>
+            <td>Set counter</td>
+            <td>{"status":"success","message":"Count of name_id was changed successfully","count":"1000"}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{"status":"error","message":"ID of name_id not found"}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{"status":"error","message":"Invalid count value for name_id. Count should be a number"}</td>
+        </tr>
+    </table><br>
+
+    <h2>OTHER RESULT</h2>
+    <table>
+        <tr>
+            <th>Error Code</th>
+            <th>Response</th>
+        </tr>
+        <tr>
+            <td>404</td>
+            <td>{"status":"error","message":"Route not found"}</td>
+        </tr>
+        <tr>
+            <td>500</td>
+            <td>{"status":"error","message":"Internal Server Error"}</td>
+        </tr>
+    </table><br>
+</body>
+
+</html>
