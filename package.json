@@ -7,8 +7,8 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "npx prisma generate && node index.js",
-    "build": "npx prisma generate",
+    "start": "prisma generate && node index.js",
+    "build": "prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hamdanzull",
