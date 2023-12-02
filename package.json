@@ -8,6 +8,8 @@
   },
   "scripts": {
     "start": "node index.js",
+    "build": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hamdanzull",
