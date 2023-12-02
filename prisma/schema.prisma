@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  output   = "./generated/client"
 }
 
 datasource db {
@@ -11,7 +12,7 @@ datasource db {
 }
 
 model Counts {
-  id       Int     @id @default(autoincrement())
-  name_id  String  @unique
-  count    Int
+  id      Int    @id @default(autoincrement())
+  name_id String @unique
+  count   Int
 }
