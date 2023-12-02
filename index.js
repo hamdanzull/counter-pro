@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const countRoutes = require('./routes/countRoutes');
-const newRoutes = require('./routes/newRoutes');
 const setRoutes = require('./routes/setRoutes');
 
 const app = express();
@@ -12,9 +11,8 @@ app.use(express.json());
 app.use(cors());
 
 // routes config
-app.use(['/new', '/api/new'], newRoutes);
-app.use(['/set', '/api/set'], setRoutes);
 app.use(['/count', '/api/count'], countRoutes);
+app.use(['/set', '/api/set'], setRoutes);
 
 app.get(['/', '/api'], (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
