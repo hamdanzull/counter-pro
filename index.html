@@ -30,13 +30,13 @@
         </tr>
         <tr>
             <td>Get counter</td>
-            <td>/count/id/'name_id'</td>
-            <td>/count/?id='name_id'</td>
+            <td>/count/id/name_id</td>
+            <td>/count/?id=name_id</td>
         </tr>
         <tr>
             <td>Set counter</td>
-            <td>/set/'name_id'/num_count</td>
-            <td>/set?id='name_id'&count=num_count</td>
+            <td>/set/name_id/num_count</td>
+            <td>/set?id=name_id&count=num_count</td>
         </tr>
     </table><br>
 
@@ -50,23 +50,24 @@
         <tr>
             <td>Get counter</td>
             <td>200</td>
-            <td>{"status":"success","message":"ID of 'name_id' was added and get count successfully","count":1}</td>
+            <td>{"status":"success","message":"The ID 'name_id' was added and the count was successfully
+                changed","count":2}</td>
         </tr>
         <tr>
             <td></td>
             <td>200</td>
-            <td>{"status":"success","message":"Get count successfully","count":2}</td>
+            <td>{"status":"success","message":"The count of ID 'name_id' was successfully changed","count":2}</td>
         </tr>
         <tr>
             <td>Set counter</td>
             <td>202</td>
-            <td>{"status":"success","message":"ID of 'name_id' was addded successfully and the count was
+            <td>{"status":"success","message":"The ID 'name_id' was added and the count was successfully
                 changed","count":"1000"}</td>
         </tr>
         <tr>
             <td></td>
             <td>201</td>
-            <td>{"status":"success","message":"Count of 'name_id' was changed successfully","count":"1000"}</td>
+            <td>{"status":"success","message":"The count of ID 'name_id' was successfully changed","count":"1000"}</td>
         </tr>
         <tr>
             <td></td>

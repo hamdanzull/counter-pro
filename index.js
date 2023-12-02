@@ -1,10 +1,15 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
+// const { PrismaClient } = require('@prisma/client');
 const countRoutes = require('./routes/countRoutes');
 const setRoutes = require('./routes/setRoutes');
 
+
+dotenv.config();
 const app = express();
+// const prisma = new PrismaClient();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -17,6 +22,11 @@ app.use(['/set', '/api/set'], setRoutes);
 app.get(['/', '/api'], (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+// app.get('/users', async (req, res) => {
+//     const countsData = await prisma.counts.findMany();
+//     res.json(countsData);
+// });
 
 // Route not found
 app.use((req, res, next) => {
