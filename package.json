@@ -7,7 +7,8 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "npx prisma generate && node index.js",
+    "start": "node index.js",
+    "vercel-build": "npx prisma migrate deploy"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hamdanzull",
