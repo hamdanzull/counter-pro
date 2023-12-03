@@ -2,9 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 // const { PrismaClient } = require('@prisma/client');
-const welcome = require('../routes/welcome');
-const count = require('../routes/count');
-const set = require('../routes/set');
+const welcome = require('./routes/welcome');
+const count = require('./routes/count');
+const set = require('./routes/set');
 
 
 dotenv.config();
