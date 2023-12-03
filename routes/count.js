@@ -21,6 +21,9 @@ router.get(['/id/:name_id', '/'], async (req, res) => {
             message: `The count of ID '${updateCount.name_id}' was successfully changed`,
             count: updateCount.count
         });
+
+        // log
+        console.log("Update:", updateCount);
     } else {
         const addNewId = await prisma.counts.create({
             data: { name_id, count: 1 }
@@ -31,6 +34,9 @@ router.get(['/id/:name_id', '/'], async (req, res) => {
             message: `The ID '${addNewId.name_id}' was added and the count was successfully changed`,
             count: addNewId.count
         });
+
+        // log
+        console.log("Create:", addNewId);
     }
 
 });

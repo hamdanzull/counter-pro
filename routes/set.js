@@ -24,17 +24,22 @@ router.get(['/:name_id/:num_count', '/'], async (req, res) => {
                 message: `The count of ID '${setCount.name_id}' was successfully changed`,
                 count: setCount.count
             });
+
+            // log
+            console.log("Update:", setCount);
         } else {
             const addNewId = await prisma.counts.create({
-                data: { name_id, count: num_count }
+                data: { name_id, count: parseInt(num_count) }
             });
 
             res.status(202).json({
                 status: "success",
-                message: `The ID '${addNewId.name_id}' was added and the count was successfully
-                changed`,
+                message: `The ID '${addNewId.name_id}' was added and the count was successfully changed`,
                 count: addNewId.count
             });
+
+            // log
+            console.log("Create:", addNewId);
         }
     } else {
         return res.status(400).json({ status: "error", message: `Invalid count value for '${name_id}'. Count should be a number` });
