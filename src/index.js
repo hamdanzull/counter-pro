@@ -1,10 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const path = require('path');
 // const { PrismaClient } = require('@prisma/client');
-const countRoutes = require('./routes/countRoutes');
-const setRoutes = require('./routes/setRoutes');
+const welcome = require('../routes/welcome');
+const count = require('../routes/count');
+const set = require('../routes/set');
 
 
 dotenv.config();
@@ -16,12 +16,9 @@ app.use(express.json());
 app.use(cors());
 
 // routes config
-app.use(['/count', '/api/count'], countRoutes);
-app.use(['/set', '/api/set'], setRoutes);
-
-app.get(['/', '/api'], (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
+app.use(['/count', '/api/count'], count);
+app.use(['/set', '/api/set'], set);
+app.get(['/', '/api'], welcome);
 
 // app.get('/users', async (req, res) => {
 //     const countsData = await prisma.counts.findMany();
